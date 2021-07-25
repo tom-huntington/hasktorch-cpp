@@ -20,6 +20,7 @@ common base
   build-depends:
       base >= 4.12 && < 5
     , hasktorch >= 0.2 && < 0.3
+    , libtorch-ffi
 
 common binary-base
   import: base
@@ -36,3 +37,5 @@ executable example
   import: binary-base
   main-is: Main.hs
   hs-source-dirs: exe
+  cxx-sources: help.cpp
+  cxx-options: -std=c++17
