@@ -15,6 +15,8 @@ foreign import ccall unsafe "cpp_input_tensor" cppInputTensor :: IO (Ptr ATen.Te
 --foldLoop :: a -> Int -> (a -> Int -> IO a) -> IO a
 --foldLoop x count block = foldM block x [1 .. count]
 
+
+
 main1 :: IO ()
 main1 = do
   putStrLn "Hello Hasktorch!a"
@@ -27,7 +29,7 @@ main1 = do
 
 main :: IO ()
 main = do
-  foldLoop () 10 $ \() _ -> do
+  foldLoop () 2 $ \() _ -> do
     y <- cppInputTensor
     x <- Unsafe <$> newForeignPtr_ y
     print x

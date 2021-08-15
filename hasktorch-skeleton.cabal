@@ -37,5 +37,7 @@ executable example
   import: binary-base
   main-is: Main.hs
   hs-source-dirs: exe
-  cxx-sources: help.cpp
-  cxx-options: -std=c++17
+  C-sources: help.cpp
+  C-options: -std=c++17
+  --cxx-sources: help.cpp
+  --cxx-options: -std=c++17
